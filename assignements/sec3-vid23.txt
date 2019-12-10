@@ -1,0 +1,35 @@
+### Run 3 container locally with specific:
+    - source images
+    - names
+    - published ports
+### Ensure they run detached from the CLI
+### Mysql should run with a specific environment variable
+
+Commands run:
+### Ports are host then container
+### Detach runs them in the bcakground
+### Name gives them a local name
+NGINX
+docker container run --publish 80:80 --detach --name nginx-local nginx
+docker container logs nginx-local
+HTTPD
+docker container run --publish 8080:80 --detach --name httpd-local httpd
+docker container logs httpd-local
+MYSQL
+docker container run --publish 3306:3306 --detach --name mysql-local --env MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+docker container logs mysql-local   
+
+###List all running containers
+docker container ls
+
+###List all running & stopped containers
+docker container ls -a
+
+###List all running & stopped containers
+docker container ls -a
+
+###Stop and clean up all containers
+docker container stop ${NAME}
+docker container stop ${CONTAINER ID}
+docker container rm ${NAME}
+docker container rm ${CONTAINER ID}

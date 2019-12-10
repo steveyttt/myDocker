@@ -33,3 +33,14 @@ docker container stop ${NAME}
 docker container stop ${CONTAINER ID}
 docker container rm ${NAME}
 docker container rm ${CONTAINER ID}
+
+###Look inside running container
+###View processes and logs
+docker container top nginx-local
+docker container logs nginx-local
+
+###View realtime running info
+docker container stats nginx-local
+
+###View container specific metadata
+docker container inspect nginx-local

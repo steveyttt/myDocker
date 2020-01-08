@@ -21,3 +21,14 @@ https://www.youtube.com/watch?v=sK5i-N34im8&feature=youtu.be&list=PLBmVKD7o3L8v7
 
 docker hub:
 https://docs.docker.com/
+
+Official docker image specification
+
+https://github.com/moby/moby/blob/master/image/spec/v1.md
+
+Official docker images
+https://github.com/docker-library/official-images/tree/master/library
+
+Dockerfile reference
+https://docs.docker.com/engine/reference/builder/
+

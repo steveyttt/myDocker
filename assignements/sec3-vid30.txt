@@ -58,3 +58,14 @@ docker container run --network local1 -it --rm --read-only centos:7 bash
 
 #Run it straight in the container
 docker container run --network local1 --rm --read-only centos:7 curl -s search:9200
+
+#clean up steps
+##shows disk space used
+docker system df
+
+##clean up unused images
+docker container prune
+docker image prune
+##This does everything (including unused network)
+docker system prune
+docker system prune -a

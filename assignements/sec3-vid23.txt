@@ -25,9 +25,6 @@ docker container ls
 ###List all running & stopped containers
 docker container ls -a
 
-###List all running & stopped containers
-docker container ls -a
-
 ###Stop and clean up all containers
 docker container stop ${NAME}
 docker container stop ${CONTAINER ID}

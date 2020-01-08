@@ -28,7 +28,8 @@ https://github.com/moby/moby/blob/master/image/spec/v1.md
 
 Official docker images
 https://github.com/docker-library/official-images/tree/master/library
+https://github.com/docker-library
 
 Dockerfile reference
 https://docs.docker.com/engine/reference/builder/
-
+https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/

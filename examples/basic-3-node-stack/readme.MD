@@ -20,3 +20,4 @@
 
 ### Use Mysql to connect to MySql
 ```docker run -it --rm mysql mysql -h ${Container IP} -u root -p```
+An image can take parameters when invoked, here we are passing mysql -h (host), -u (user) & -p (password)

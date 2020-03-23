@@ -42,3 +42,18 @@ Add ```--help``` for any command to get more info
 
 ### Checking processes running on a container
 ```docker container top ${Container ID}```
+
+### Get into a container with a bash shell (container stops when session stops)
+```docker container run --tty --interactive --name proxy nginx bash```
+
+### Run a fullish linux distro (container stops when session stops)
+```docker container run --tty --interactive --name ubuntu ubuntu```
+
+### Run a shell session on an existing container (container stops when session stops)
+```docker attach ${Container ID}```
+
+### Run a shell on a container which will not stop the container when you exit
+```docker container exec --interactive --tty nginx ${Container ID}```
+
+### Alpine uses sh and not bash
+```docker container run -it alpine sh```

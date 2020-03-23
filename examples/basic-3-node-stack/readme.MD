@@ -17,3 +17,6 @@
 4. Switch to sql mode with ```\sql```
 5. Run ```SHOW DATABASES;```
 6. Quit the session with ```\quit```
+
+### Use Mysql to connect to MySql
+```docker run -it --rm mysql mysql -h ${Container IP} -u root -p```

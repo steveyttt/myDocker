@@ -1,5 +1,5 @@
 Brett
-https://github.com/BretFisher/udemy-docker-mastery
+https://github.com/bretfisher/udemy-docker-mastery
 https://www.bretfisher.com/docker/
 
 CNCF

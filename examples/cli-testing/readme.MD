@@ -8,7 +8,7 @@ yum update curl
 curl --version
 ```
 
-### Ubuntu
+### Ubuntu  
 Comes with version 7.35.0 by default
 ```
 docker container run --rm --interactive --tty ubuntu:14.04

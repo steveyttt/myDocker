@@ -1,4 +1,4 @@
-### Delete containers, images, networks if unused
+### Delete unused containers, images, networks & cache
 ```
 docker container prune
 docker image prune

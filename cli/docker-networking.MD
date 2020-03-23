@@ -4,6 +4,7 @@
 * Containers can only communicate over their own virtual network OR communicate out back over the host machine (You cannot go direct from one docker network to another docker network direct)
 * DNS does not work by default on the default docker network
 * The docker daemon has a built in DNS server
+* You can create a DNS alias that all containers can share (see round robin test under examples)
 
 ### Show open ports and their mappings on a container
 ```docker container port webhost```

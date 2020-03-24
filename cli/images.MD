@@ -9,6 +9,9 @@
 ### Docker file reference
 Located [here](https://docs.docker.com/engine/reference/builder/)
 
+### Docker ignore  
+Use docker ignore to ignore certain file types when building images
+[Docker ignore](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 ### Good NodeJS defaults
 [Here](https://github.com/BretFisher/node-docker-good-defaults)
 

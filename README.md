@@ -28,3 +28,10 @@ https://github.com/docker-library
 ### Dockerfile reference
 https://docs.docker.com/engine/reference/builder/
 https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+
+### O Reilly 
+https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure/
+
+### 12 factor app
+https://12factor.net/
+https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.cjvkgw4b3

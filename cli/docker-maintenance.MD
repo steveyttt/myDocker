@@ -1,5 +1,4 @@
 ### Delete unused containers, images, networks & cache  
-  
 ```docker container prune```  
 Remove stopped containers  
 
@@ -15,6 +14,8 @@ Removes all stopped containers, unused volumes, unused networks, dangling images
 ```docker system prune -a```  
 Removes all stopped containers, unused volumes, unused networks, all images
 
+```docker volume prune```  
+Remove old unused volumes
 
 ### Show used disk space
 ```docker system df```

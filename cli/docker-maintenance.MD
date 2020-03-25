@@ -22,3 +22,6 @@ Remove old unused volumes
 
 #### Config file is kept here for docker login deets
 ```~/.docker/config.json```
+
+#### Get basic docker info
+``` docker info```

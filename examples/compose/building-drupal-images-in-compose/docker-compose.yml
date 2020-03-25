@@ -1,4 +1,4 @@
-### Docker-compose file used to create a drupal site with a postgres backend
+#### Docker-compose file used to create a drupal site with a postgres backend
 version: "3.7"
 services: 
   

@@ -1,4 +1,4 @@
-### Info
+#### Info
 * swarm mode needs enabling on docker hosts before you can use it
 * clusters are made up of managers and workers
 * MANAGERS are CAs and also keep a local database leveraging RAFT.

@@ -1,0 +1,14 @@
+## Example of an nginx instance which load balances to an apache instance.
+version: '3'
+
+services:
+  proxy:
+    image: nginx:1.13 # this will use the latest version of 1.13.x
+    ports:
+      - '80:80' # expose 80 on host and sent to 80 in container
+    #This is called a volume but is actually a bind mount
+    #The :ro at the end makes the bind mount RO to the container
+    volumes: 
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  web:
+    image: httpd  # this will use httpd:latest

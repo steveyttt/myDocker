@@ -1,3 +1,7 @@
+#### Install docker from
+[get.docker.com](https://get.docker.com/)
+```curl -sSL https://get.docker.com/ | sh```
+
 #### Brett
 https://github.com/bretfisher/udemy-docker-mastery  
 https://www.bretfisher.com/docker/

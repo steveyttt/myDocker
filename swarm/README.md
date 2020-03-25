@@ -18,6 +18,7 @@
     * Scheduler - Assigns nodes to tasks
     * Dispatcher - Checks in on workers
 * If the desired task / replica count drops below what has been configured then a MANAGER node will inform a worker node to start a new replica. This is the job of the orchestrator.
+* Worker nodes do not have access to the swarm CLI commands
 
 #### Handy links
 [docker swarm docs](https://docs.docker.com/engine/swarm/services/)
@@ -26,6 +27,8 @@
 [speaker slides](https://speakerdeck.com/aluzzardi/heart-of-the-swarmkit-topology-management)
 [Heart of the swarm kit](https://www.youtube.com/watch?v=EmePhjGnCXY)
 [Raft Consensus visualisation](http://thesecretlivesofdata.com/raft/)
+[Swarm firewall ports](https://www.bretfisher.com/docker-swarm-firewall-ports/)
+[swarm mode routing mesh](https://docs.docker.com/engine/swarm/ingress/)
 
 #### Enable swarm mode on your host
 ```docker swarm init```
@@ -36,7 +39,7 @@
 #### promoting and demoting nodes
 ```docker node --help```
 
-#### leaving and joining the swarm cluster is done with
+#### Getting tokens + leaving and joining the swarm cluster is done with
 ```docker swarm --help```
 
 #### manager services with
@@ -51,4 +54,4 @@ docker service update ${Service ID} --replicas 3
 ```
 
 #### update a docker container on the fly
-docker update --help
+```docker update --help```

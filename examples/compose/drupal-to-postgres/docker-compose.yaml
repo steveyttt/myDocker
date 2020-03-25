@@ -1,0 +1,40 @@
+### Docker-compose file used to create a drupal site with a postgres backend
+version: "3.7"
+services: 
+    drupal:
+        image: drupal:8.8.4
+        ports:
+            - "8080:80"
+        volumes: 
+            - type: volume
+              source: drupal-sites-temp
+              target: /temporary/sites
+            - type: volume
+              source: drupal-modules
+              target: /var/www/html/modules
+            - type: volume
+              source: drupal-profiles
+              target: /var/www/html/profiles
+            - type: volume
+              source: drupal-sites
+              target: /var/www/html/sites
+            - type: volume
+              source: drupal-themes
+              target: /var/www/html/themes
+
+    postgresdb:
+        image: postgres:12.2
+        environment: 
+            POSTGRES_PASSWORD: supersecure
+        volumes: 
+            - type: volume
+              source: pgsqlvolume
+              target: /var/lib/postgresql/data
+
+volumes: 
+    pgsqlvolume:
+    drupal-themes:
+    drupal-sites:
+    drupal-profiles:
+    drupal-sites-temp:
+    drupal-modules:

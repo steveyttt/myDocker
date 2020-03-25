@@ -1,0 +1,20 @@
+version: '2'
+# https://docs.docker.com/compose/compose-file/#build
+# uses sample site from https://startbootstrap.com/template-overviews/agency/
+
+services:
+  proxy:
+    #Specifying that we want to build a new image
+    build:
+      #Build in the current directory
+      context: .
+      #Specify the docker file to use
+      dockerfile: nginx.Dockerfile
+    #The name for the image once created, this is optional as compose will name it if you leave it
+    image: nginx-custom:1.1.1
+    ports:
+      - '80:80'
+  web:
+    image: httpd
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/

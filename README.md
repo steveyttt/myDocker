@@ -1,5 +1,5 @@
 #### Install docker from
-[get.docker.com](https://get.docker.com/)
+[get.docker.com](https://get.docker.com/)  
 ```curl -sSL https://get.docker.com/ | sh```
 
 #### Brett

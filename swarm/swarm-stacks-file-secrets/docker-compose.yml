@@ -1,0 +1,22 @@
+# Obviously dont keep secrets in plain text in the REPO, you could use env vars from CI for example
+# Or query vault / AWS secrets manager
+# Deploy me with
+# docker stack deploy -c docker-compose.yml mydb
+version: "3.1"
+
+services:
+  psql:
+    image: postgres
+    secrets:
+      - psql_user
+      - psql_password
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/psql_password
+      POSTGRES_USER_FILE: /run/secrets/psql_user
+
+secrets:
+  psql_user:
+    file: ./psql_user.txt
+  psql_password:
+    file: ./psql_password.txt
+

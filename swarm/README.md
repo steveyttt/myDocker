@@ -1,14 +1,13 @@
 #### Info
 * swarm mode needs enabling on docker hosts before you can use it
 * clusters are made up of managers and workers
-* MANAGERS are CAs which assign certs for node to node encryption & also keep a local database leveraging RAFT. They assign worker to worker nodes.
+* MANAGERS are CAs which assign certs for node to node encryption & also keep a local database leveraging RAFT. They assign work to worker nodes.
 * The RAFT database is replicated across all managers
-* Goosip is used to replicate information between nodes
-* WORKERS host containers
+* Gossip protocol is used to replicate information between nodes
+* WORKERS host containers (But managers can too)
 * All inter-host communication is encrypted
-* MANAGERS can be workers (To host containers)
 * MANAGERS can be demoted to workers
-* WORKERS can be demoted to managers
+* WORKERS can be promoted to managers
 * ```docker service``` replaces ```docker run``` in swarm mode
 * Heirachy in a swarm cluster is ```Services >>> Replicas (tasks) >>> container```
 * Managers perform the following steps when ```docker service create``` is issued
@@ -29,6 +28,8 @@
 [Raft Consensus visualisation](http://thesecretlivesofdata.com/raft/)
 [Swarm firewall ports](https://www.bretfisher.com/docker-swarm-firewall-ports/)
 [swarm mode routing mesh](https://docs.docker.com/engine/swarm/ingress/)
+[managing secrets in swarm](https://docs.docker.com/engine/swarm/secrets/)
+[secrets in compose](https://docs.docker.com/compose/compose-file/#secrets-configuration-reference)
 
 #### Enable swarm mode on your host
 ```docker swarm init```
@@ -55,3 +56,6 @@ docker service update ${Service ID} --replicas 3
 
 #### update a docker container on the fly
 ```docker update --help```
+
+#### mounting a volume to a service ####
+```docker service create --name db --replicas 1 --network backend_swarm_voting_app --mount type=volume,source=db-data,target=/var/lib/postgresql/data --env POSTGRES_HOST_AUTH_METHOD=trust postgres:9.4```

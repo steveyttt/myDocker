@@ -26,6 +26,13 @@ Use docker ignore to ignore certain file types when building images
 * Keep the things that change the MOST at the BOTTOM of your Dockerfile
 * This is so you can take advantage of CACHING effectively
 * Use ```workdir``` not ```cd ${directory}```
+* Use [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck)
+    * Healthchecks run from inside the container
+    * Expects a 0 (healthy) or a 1 (error)
+    * three states,healthy, unhealthy or starting
+    * Runs an exec command to perform health check
+    * Shows command output from exec in docker inspect command
+    * Takes no action if it is poor (only swarm scheduler can do that)
 
 #### Official docker images:
 [Official DockerHub Images](https://github.com/docker-library/official-images/tree/master/library)

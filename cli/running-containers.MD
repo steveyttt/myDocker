@@ -57,3 +57,6 @@ Add ```--help``` for any command to get more info
 
 #### Alpine uses sh and not bash
 ```docker container run -it alpine sh```
+
+#### Include a health check when running a container
+````docker container run --health-cmd="curl -f localhost:9200/_cluster/health || false" --health-interval=5s --health-retries=3 --health-timeout=2s --health-start-period=15s elasticsearch:2```

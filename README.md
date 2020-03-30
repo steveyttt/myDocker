@@ -16,6 +16,12 @@ CNCF tool grading
 #### Play with docker in the browser
 https://labs.play-with-docker.com/
 
+#### Training
+[Play with docker](https://training.play-with-docker.com/)
+
+#### Awesome docker
+https://github.com/veggiemonk/awesome-docker
+
 #### Youtube channel
 https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg
 

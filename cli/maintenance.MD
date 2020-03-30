@@ -20,6 +20,9 @@ Remove old unused volumes
 #### Show used disk space
 ```docker system df```
 
+#### Login to hub.docker.com
+```docker login```
+
 #### Config file is kept here for docker login deets
 ```~/.docker/config.json```
 

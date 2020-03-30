@@ -32,7 +32,7 @@ docker service update ${Service ID} --replicas 3
 
 #### To force an update / rebalance of a service you can do
 ```docker service update --force ${service name}```  
-* This is handy if you add new hosts to your cluster and need to re:balance
+* This is handy if you add new hosts to your cluster and need to re:balance  
 
 #### start a service with a health check
 ```docker service create --name pgres2 --health-cmd="pg_isready -U postgres || exit 1" postgres```

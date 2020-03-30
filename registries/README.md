@@ -30,7 +30,11 @@
 
 * Lists of great registries are:
   * http://quay.io/
+  * https://aws.amazon.com/ecr/
+  * https://azure.microsoft.com/en-us/services/container-registry/
+  * https://cloud.google.com/container-registry/
   
+
 
 #### Spin up the registry ####
 ```

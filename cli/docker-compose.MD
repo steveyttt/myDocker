@@ -28,5 +28,3 @@ docker-compose down -rmi
 
 #### check running containers services
 ```docker-compose top```
-
-#### down a stack and delete images & volumes

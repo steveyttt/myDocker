@@ -30,6 +30,7 @@
 [swarm mode routing mesh](https://docs.docker.com/engine/swarm/ingress/)
 [managing secrets in swarm](https://docs.docker.com/engine/swarm/secrets/)
 [secrets in compose](https://docs.docker.com/compose/compose-file/#secrets-configuration-reference)
+[Updating a docker service](https://docs.docker.com/engine/reference/commandline/service_update/)
 
 #### Enable swarm mode on your host
 ```docker swarm init```
@@ -42,20 +43,3 @@
 
 #### Getting tokens + leaving and joining the swarm cluster is done with
 ```docker swarm --help```
-
-#### manager services with
-```docker service --help```
-
-#### Create a service with
-```
-docker service create alpine ping 8.8.8.8
-docker service ls
-docker service ps ${Service ID}
-docker service update ${Service ID} --replicas 3
-```
-
-#### update a docker container on the fly
-```docker update --help```
-
-#### mounting a volume to a service ####
-```docker service create --name db --replicas 1 --network backend_swarm_voting_app --mount type=volume,source=db-data,target=/var/lib/postgresql/data --env POSTGRES_HOST_AUTH_METHOD=trust postgres:9.4```

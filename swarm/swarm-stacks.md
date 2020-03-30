@@ -12,7 +12,7 @@
 
 #### Deploying a stack
 ```docker stack deploy -c ${composefile.yaml} ${stackname}```  
-* Updates are done by simply running the same command again. I.E modify the composefile.yaml and re-run the above command. Docker swarm is smart enough to only update th resources which have changed. Idempotent.
+* Updates are done by simply running the same command again. I.E modify the composefile.yaml and re-run the above command. Docker swarm is smart enough to only update the resources which have changed. Idempotent.
 * -c denotes compose-file format  
 
 #### List tasks in a stack ####

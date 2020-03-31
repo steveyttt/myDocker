@@ -11,6 +11,7 @@
 * Kube has a [Playground](https://www.katacoda.com/courses/kubernetes/playground)
 * For local testing it is easiest to use docker desktop
 * You can deploy with declarative YAML or with the CLI
+* Handy logging tool [stern](https://github.com/wercker/stern)
 
 #### Components
 * Kubernetes is made up of many [components](https://kubernetes.io/docs/concepts/overview/components/#master-components)

@@ -18,6 +18,7 @@
     * Dispatcher - Checks in on workers
 * If the desired task / replica count drops below what has been configured then a MANAGER node will inform a worker node to start a new replica. This is the job of the orchestrator.
 * Worker nodes do not have access to the swarm CLI commands
+* Use constraints & labels to define what nodes a container should be placed on
 
 #### Handy links
 [docker swarm docs](https://docs.docker.com/engine/swarm/services/)
@@ -31,6 +32,7 @@
 [managing secrets in swarm](https://docs.docker.com/engine/swarm/secrets/)
 [secrets in compose](https://docs.docker.com/compose/compose-file/#secrets-configuration-reference)
 [Updating a docker service](https://docs.docker.com/engine/reference/commandline/service_update/)
+[Future of swarm](https://www.bretfisher.com/the-future-of-docker-swarm/)
 
 #### Enable swarm mode on your host
 ```docker swarm init```

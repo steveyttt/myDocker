@@ -1,6 +1,8 @@
 #### Info
 * [Kubernetes](https://kubernetes.io/) = container orchestrator
-* [totorials](https://kubernetes.io/docs/tutorials/)
+* [tutorials](https://kubernetes.io/docs/tutorials/)
+* [Concepts](https://kubernetes.io/docs/concepts/)
+* [Reference](https://kubernetes.io/docs/reference/)
 * Released in 2015 by google
 * Can run [containerD](https://containerd.io/) or docker [cri-o](https://cri-o.io/#what-is-cri-o) (Or other container runtimes).
   * [Supported runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
@@ -10,8 +12,20 @@
 * Currently running v1.18
 * Kube has a [Playground](https://www.katacoda.com/courses/kubernetes/playground)
 * For local testing it is easiest to use docker desktop
-* You can deploy with declarative YAML or with the CLI
+* You can deploy with declarative YAML or imperatively with the CLI
 * Handy logging tool [stern](https://github.com/wercker/stern)
+
+#### Emulation tools
+#### Minikube
+* Minikube [releases](https://github.com/kubernetes/minikube/releases/). Suitable if you have docker toolbox.
+  * ```minikube implements a local Kubernetes cluster on macOS, Linux, and Windows. minikube's primary goals are to be the best tool for local Kubernetes application development and to support all Kubernetes features that fit.```
+
+#### Microk8s
+* [Microk8s](https://github.com/ubuntu/microk8s). Suitable if you have a running linux VM.
+  * ```Single-package fully conformant lightweight Kubernetes that works on 42 flavours of Linux. Perfect for - Developer workstations, IoT, Edge, CI/CD```
+  * uses snap to install kube
+  * doesnt include docker runtime by default
+  * Control things via ```microk8s``` cli commmands
 
 #### Declarative vs Imperative
 https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/  
@@ -34,22 +48,10 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/
   * coreDNS (managed DNS)
   * sometimes called MASTER (Masters run kube mgmt layer and nodes run containers)
 
-* Nodes run simpler and only have two containers running at anyone time.
+* Nodes run simpler than masters and only have two containers running at anyone time.
   * kubelet (Agent which runs on nodes, ensures containers are in pods)
   * kube-proxy (managed network connectivity)
 
-
-#### Minikube
-* Minikube [releases](https://github.com/kubernetes/minikube/releases/). Suitable if you have docker toolbox.
-  * ```minikube implements a local Kubernetes cluster on macOS, Linux, and Windows. minikube's primary goals are to be the best tool for local Kubernetes application development and to support all Kubernetes features that fit.```
-
-
-#### Microk8s
-* [Microk8s](https://github.com/ubuntu/microk8s). Suitable if you have a running linux VM.
-  * ```Single-package fully conformant lightweight Kubernetes that works on 42 flavours of Linux. Perfect for - Developer workstations, IoT, Edge, CI/CD```
-  * uses snap to install kube
-  * doesnt include docker runtime by default
-  * Control things via ```microk8s``` cli commmands
 
 #### Terminology
 * [PODS](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
@@ -70,7 +72,7 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/
 * [CONTROLLER](https://kubernetes.io/docs/concepts/architecture/controller/)
   ```
   For creating & updating pods and other objects.
-  Think deployment stes, replicasets, daemonsets, cronjobs
+  Think deployment setss, replicasets, daemonsets, cronjobs
   ```
 
 * [SERVICES](https://kubernetes.io/docs/concepts/services-networking/service/)
@@ -95,3 +97,20 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/
     It is not necessary to use multiple namespaces just to separate slightly different resources, such as different versions of the same software: use labels to distinguish resources within the same namespace.
 
 ```
+#### Handy URLs
+* [Kube Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
+* [API - reference](https://kubernetes.io/docs/reference/#api-reference)
+
+#### Labels ####
+  * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
+  * https://vsupalov.com/kubernetes-labels-annotations-difference/
+  * https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
+  * used to group,select and filter your resources
+  * Think uses like env, tier, appname customer (i..e tag)
+
+* Annotations
+    * More like config data (Proxies,etc)
+
+* Pinning nodes to pods, Node affinity, Taints and tollerations (Allowing pods to run on nodes, or NOT)
+    * https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/

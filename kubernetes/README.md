@@ -1,11 +1,11 @@
 #### Info
-* Kubernetes = container orchestrator
+* [Kubernetes](https://kubernetes.io/) = container orchestrator
+* [totorials](https://kubernetes.io/docs/tutorials/)
 * Released in 2015 by google
-* Can run containerD or docker (Or other container runtimes).
+* Can run [containerD](https://containerd.io/) or docker [cri-o](https://cri-o.io/#what-is-cri-o) (Or other container runtimes).
   * [Supported runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
 * Run a lot with kubectl (Kube control)
 * [Vendors](https://kubernetes.io/partners/#conformance) also make distribtutions of kubernetes
-* [Page](https://kubernetes.io/)
 * Best to avoid the pure upstream version of kube, you can use it, but most people use a vendor specific one. However, check the vendors match the version of kube in github (Or one release behind) [github](https://github.com/kubernetes/kubernetes)
 * Currently running v1.18
 * Kube has a [Playground](https://www.katacoda.com/courses/kubernetes/playground)
@@ -20,16 +20,16 @@
 * kubelet is the kube agent running on the node
 
 * control plane is in charge of the cluster (It is a set of containers), each service below runs as a unique container on each master.
-  * etcD 
-  * api server
-  * scheduler
-  * controller manager
-  * coreDNS
+  * etcD (Key,value backing store for kube)
+  * api server(exposes the kube controlpane api)
+  * scheduler (Assigns pods to nodes)
+  * controller manager (manages nodecount, replica count & bridges services to pods )
+  * coreDNS (managed DNS)
   * sometimes called MASTER (Masters run kube mgmt layer and nodes run containers)
 
 * Nodes run simpler and only have two containers running at anyone time.
-  * kubelet
-  * kube-proxy
+  * kubelet (Agent which runs on nodes, ensures containers are in pods)
+  * kube-proxy (managed network connectivity)
 
 
 #### Minikube

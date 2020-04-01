@@ -13,6 +13,13 @@
 * You can deploy with declarative YAML or with the CLI
 * Handy logging tool [stern](https://github.com/wercker/stern)
 
+#### Declarative vs Imperative
+https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/  
+https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-command/
+https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-config/
+https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/
+
+
 #### Components
 * Kubernetes is made up of many [components](https://kubernetes.io/docs/concepts/overview/components/#master-components)
 * [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) is the CLI to speak with the kube api - officially call it kube control

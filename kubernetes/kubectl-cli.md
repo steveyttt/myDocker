@@ -2,6 +2,9 @@
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/
 
+#### Conventions ####
+https://kubernetes.io/docs/reference/kubectl/conventions/
+
 #### get the version ####
 ```kubectl version```
 * provides the server version and the cli version  
@@ -24,8 +27,8 @@ kubectl run my-apache --image httpd
 kubectl scale deploy/my-apache --replicas 2
 ```
 
-![diagram](./image-deployments.png)
-![diagram](./image-replica-sets.png)
+![diagram](./diagrams/image-deployments.png)
+![diagram](./diagrams/image-replica-sets.png)
 
 #### logs
 ```
@@ -74,3 +77,7 @@ kubectl delete pod tmp-shell
 
 #### Name Spaces
 ```kubectl get namespaces```
+
+#### Future of kubectl RUN  
+* Right now ```kubectl RUN``` creates a deployment. Soon it will only create a POD. The expectation is that all commands should move to ```kubectl CREATE```.
+

@@ -1,0 +1,73 @@
+## Create with:
+  ## "echo 'Hello from Kubernetes storage' > /tmp/data/index.html"
+  ## kubectl apply -f volume.yaml
+  ## kubectl get pv nginx-pv-volume
+  ## kubectl get pvc nginx-pv-claim
+  ## kubectl delete -f volume.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nginx-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/data"  
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pv-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-pv
+  template:
+    metadata:
+      labels:
+        app: nginx-pv
+    spec:
+      containers:
+      - name: nginx-pv-container
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: "http-server"
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: nginx-pv-storage
+      volumes:
+        - name: nginx-pv-storage
+          persistentVolumeClaim:
+            claimName: nginx-pv-claim
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-pv-service
+  labels:
+    app: nginx-pv
+spec:
+  selector:
+    app: nginx-pv
+  ports:
+  - port: 80
+  type: NodePort

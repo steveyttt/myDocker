@@ -3,6 +3,7 @@
 * [tutorials](https://kubernetes.io/docs/tutorials/)
 * [Concepts](https://kubernetes.io/docs/concepts/)
 * [Reference](https://kubernetes.io/docs/reference/)
+* [Has a dashboard](https://github.com/kubernetes/dashboard)
 * Released in 2015 by google
 * Can run [containerD](https://containerd.io/) or docker [cri-o](https://cri-o.io/#what-is-cri-o) (Or other container runtimes).
   * [Supported runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
